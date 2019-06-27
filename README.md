@@ -1,4 +1,4 @@
-# Rust markdown parser example
+# Wasm markdown parser example with Rust
 
 reference: https://www.youtube.com/watch?v=Mj6hTGo0oGc
 
