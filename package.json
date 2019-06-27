@@ -4,10 +4,11 @@
   "description": "from: https://www.youtube.com/watch?v=Mj6hTGo0oGc",
   "main": "index.js",
   "scripts": {
-    "serve": "webpack-dev-server",
-    "build": "webpack",
+    "dev": "webpack-dev-server",
+    "build:js": "webpack",
+    "build:wasm-debug": "cargo build --target wasm32-unknown-unknown && wasm-bindgen target/wasm32-unknown-unknown/debug/markdown_parser.wasm --out-dir .",
+    "build:wasm-release": "cargo build --release --target wasm32-unknown-unknown && wasm-bindgen target/wasm32-unknown-unknown/release/markdown_parser.wasm --out-dir .",
     "clean": "rm -rf ./dist ./markdown_parser_bg.* ./markdown_parser.* && cargo clean",
-    "build-debug": "cargo +nightly build --target wasm32-unknown-unknown && wasm-bindgen target/wasm32-unknown-unknown/debug/markdown_parser.wasm --out-dir .",
     "test": "cargo test",
     "test:watch": "cargo watch -x test",
     "fmt": "cargo fmt",
@@ -17,6 +18,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "copy-webpack-plugin": "^5.0.3",
     "webpack": "^4.35.0",
     "webpack-cli": "^3.3.5",
     "webpack-dev-server": "^3.7.2"

@@ -8,6 +8,7 @@ from: https://www.youtube.com/watch?v=Mj6hTGo0oGc
 
 * [rustup](https://github.com/rust-lang/rustup.rs)
 * rust 1.35.0
+* node.js >= 10.x
 
 ```bash
 rustup install 1.35.0
@@ -24,11 +25,24 @@ cargo install cargo-watch
 ```bash
 git clone <REPOSITORY_URL>
 cd markdown_parser
-cargo build
+
+# Complie rust code
+npm run build:wasm-debug
+## or
+npm run build:wasm-release
+
+# Run webpack-dev-server
+npm install
+npm run dev
+open http://localhost:8080
 ```
 
-### format
+### format code
 
 ```bash
 cargo fmt
 ```
+
+# LISENCE
+
+MIT
