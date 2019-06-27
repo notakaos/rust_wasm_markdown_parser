@@ -21,7 +21,7 @@ impl Parser {
                 break;
             }
 
-            result.push_str(&self.parse_lines());
+            result.push_str(&self.parse_line());
         }
         result
     }
@@ -62,10 +62,6 @@ impl Parser {
 
     fn end_of_line(&self) -> bool {
         self.pos >= self.input.len()
-    }
-
-    fn starts_with(&self, s: &str) -> bool {
-        self.input[self.pos..].starts_with(s)
     }
 
     fn next_char(&self) -> char {
