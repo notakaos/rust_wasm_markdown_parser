@@ -1,6 +1,6 @@
 # Rust markdown parser example
 
-from: https://www.youtube.com/watch?v=Mj6hTGo0oGc
+reference: https://www.youtube.com/watch?v=Mj6hTGo0oGc
 
 ## Development
 
