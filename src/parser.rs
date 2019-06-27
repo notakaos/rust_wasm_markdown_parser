@@ -100,3 +100,11 @@ fn create_html_element(tag_name: String, text: String) -> String {
 fn is_newline(c: char) -> bool {
     c == '\n'
 }
+
+#[test]
+fn test_parse_hello() {
+    assert!(parse("hello".to_string()) == "hello");
+    assert!(parse("# hello".to_string()) == "<h1>hello</h1>");
+    assert!(parse("## hello".to_string()) == "<h2>hello</h2>");
+    assert!(parse("### hello\n#### foobar".to_string()) == "<h3>hello</h3><h4>foobar</h4>");
+}
