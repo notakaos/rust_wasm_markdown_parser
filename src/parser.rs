@@ -1,3 +1,6 @@
+#[cfg(test)]
+use pretty_assertions::{assert_eq};
+
 struct Parser {
     pos: usize,
     input: String,
@@ -103,8 +106,9 @@ fn is_newline(c: char) -> bool {
 
 #[test]
 fn test_parse_hello() {
-    assert!(parse("hello".to_string()) == "hello");
-    assert!(parse("# hello".to_string()) == "<h1>hello</h1>");
-    assert!(parse("## hello".to_string()) == "<h2>hello</h2>");
-    assert!(parse("### hello\n#### foobar".to_string()) == "<h3>hello</h3><h4>foobar</h4>");
+    assert_eq!(parse("hello".to_string()), "hello");
+    assert_eq!(parse("# hello".to_string()), "<h1>hello</h1>");
+    assert_eq!(parse("## hello".to_string()), "<h2>hello</h2>");
+    assert_eq!(parse("### hello\n#### foobar".to_string()), "<h3>hello</h3><h4>foobar</h4>");
+    assert_eq!(parse("- test1\n- test2\n- test3".to_string()), "<li>test1</li><li>test2</li><li>test3</li>");
 }
