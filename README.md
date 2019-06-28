@@ -13,6 +13,7 @@ reference: https://www.youtube.com/watch?v=Mj6hTGo0oGc
 * [rustup](https://github.com/rust-lang/rustup.rs)
 * rust 1.35.0
 * node.js >= 10.x
+* npm >= 6.x
 
 ```bash
 rustup install 1.35.0
