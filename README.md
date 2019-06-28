@@ -30,7 +30,7 @@ cargo install cargo-watch
 git clone <REPOSITORY_URL>
 cd markdown_parser
 
-# Complie rust code
+# Compile rust code
 npm run build:wasm-debug
 ## or
 npm run build:wasm-release
